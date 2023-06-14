@@ -1,0 +1,17 @@
+services:
+  react-todo-app:
+    container_name: react-todo-app
+    image: todo-app
+    build: .
+    ports:
+      - 3000:3000
+    depends_on:
+      - react-todo-app-db
+
+  react-todo-app-db:
+    container_name: react-todo-app-db
+    image: json-server-image
+    ports:
+      - 3001:3001
+    build: ./db
+    command: json-server -H 0.0.0.0 -p 3001 -w /data/db.json
