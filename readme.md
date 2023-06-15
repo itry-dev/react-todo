@@ -16,6 +16,11 @@ Put this string into it:
 ```
 {"todos":[]}
 ```  
+and start json server
+```
+cd db
+json-server db.jon
+```
 
 It's not necessary if you run the app using docker.  
 
